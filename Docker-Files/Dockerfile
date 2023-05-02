@@ -1,7 +1,7 @@
 FROM python:3.6.1-alpine
 ARG PROJECT_NAME
 RUN apk update \
-  &amp;&amp; apk add \
+  && apk add \
     build-base \
     postgresql \
     postgresql-dev \
