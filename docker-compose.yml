@@ -1,9 +1,10 @@
 version: "3.1"
 services:
-    mysql:
+    python-ai-bot:
         build: 
-           #context: .
-           dockerfile: Docker-Files/Dockerfile 
+          args:
+            - PROJECT_NAME=${PROJECT_NAME} 
+          dockerfile: Docker-Files/Dockerfile 
         working_dir: /var/www/html/${PROJECT_NAME}
         volumes:
             - "./Project:/var/www/html/${PROJECT_NAME}"
