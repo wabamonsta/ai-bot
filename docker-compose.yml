@@ -1,0 +1,12 @@
+version: "3.1"
+services:
+    mysql:
+        build: 
+           #context: .
+           dockerfile: Docker-Files/Dockerfile 
+        working_dir: /var/www/html/${PROJECT_NAME}
+        volumes:
+            - "./Project:/var/www/html/${PROJECT_NAME}"
+        env_file: 
+            - .env
+
