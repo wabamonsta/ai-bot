@@ -1,1 +1,7 @@
-pytz Django djangorestframework psycopg2 django-cors-headers dj-database-url gunicorn virtualenv openai gpt_index==0.4.24 PyPDF2 PyCryptodome gradio
+python-dotenv
+gradio==3.28.1
+langchain==0.0.157
+llama-index==0.6.0
+openai==0.27.6
+pypDF2==3.0.1
+pycryptodome==3.17
