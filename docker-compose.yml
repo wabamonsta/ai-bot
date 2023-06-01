@@ -4,7 +4,8 @@ services:
         build: 
           args:
             - PROJECT_NAME=${PROJECT_NAME} 
-            - OPENAI_API_KEY =${OPENAI_API_KEY}
+            - OPENAI_API_KEY=${OPENAI_API_KEY}
+            - GraphQL_SITE=${GraphQL_SITE}
           dockerfile: Docker-Files/Dockerfile 
         working_dir: /var/www/html/${PROJECT_NAME}
         volumes:

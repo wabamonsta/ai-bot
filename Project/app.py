@@ -2,6 +2,10 @@ import gradio as gr
 import sys
 import os
 from dotenv import load_dotenv
+from python_graphql_client import GraphqlClient
+import requests
+from  getGraphql import getGraphQlData
+
 load_dotenv()
 
 from langchain.chat_models import ChatOpenAI
@@ -45,8 +49,9 @@ def chatbot(input_text):
     return response.response
 
 
-iface = gr.Interface(fn=chatbot, inputs=gr.inputs.Textbox(lines=7, label="Enter your text"), outputs="text",
-                     title="Custom-trained Al Chatbot")
 
+iface = gr.Interface(fn=chatbot, inputs=gr.inputs.Textbox(lines=7, label="Enter your text"), outputs="text",title=os.environ["PROJECT_NAME"]+" Custom-trained  Chatbot")
+
+getGraphQlData(os.environ["GraphQL_SITE"])
 # index = construct_index("docs")
 iface.launch(share=True)
